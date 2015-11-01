@@ -1,0 +1,17 @@
+﻿@model BaseballLeague.Models.AddTeamVM
+
+<h2>Add A Team</h2>
+
+@using (Html.BeginForm("AddTeam", "Team", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Team Name</label>
+        @Html.TextBoxFor(m => m.NewTeam.TeamName, new { @class="form-control", @placeholder="Team Name Here"})
+        <br />
+        <label>Manager Name</label>
+        @Html.TextBoxFor(m => m.NewTeam.ManagerName, new { @class = "form-control", @placeholder = "Manager Name Here"})
+        <br />
+    </div>
+    <button class="btn btn-default">Submit</button>
+
+}

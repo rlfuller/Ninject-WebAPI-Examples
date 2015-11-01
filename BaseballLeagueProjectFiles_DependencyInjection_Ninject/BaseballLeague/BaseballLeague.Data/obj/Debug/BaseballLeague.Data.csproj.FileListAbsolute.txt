@@ -1,0 +1,10 @@
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\BaseballLeague.Data.dll
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\BaseballLeague.Data.pdb
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\BaseballLeague.Models.dll
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\Dapper.dll
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\BaseballLeague.Models.pdb
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\Dapper.pdb
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\bin\Debug\Dapper.xml
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\obj\Debug\BaseballLeague.Data.dll
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\obj\Debug\BaseballLeague.Data.pdb
+C:\_repos\DVDLibraryProject\BaseballLeagueProjectFiles\BaseballLeague\BaseballLeague.Data\obj\Debug\BaseballLeague.Data.csprojResolveAssemblyReference.cache
