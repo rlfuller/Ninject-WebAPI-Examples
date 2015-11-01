@@ -1,0 +1,304 @@
+﻿@model Models.Response<List<Models.VehicleVM>>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Index, Manageinventory</h4>
+<button type="button" class="btn-xs btn-block" data-toggle="modal" data-target="#AddCarModal">Add New Car</button>
+
+<table class="table" id="inventoryTable">
+    <tr>
+        <th>
+            Veh ID
+        </th>
+
+        <th>
+            Year
+        </th>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Trim
+        </th>
+        <th>
+            Mileage
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Available?
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Data)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailSmartProp)
+            </td>
+
+            <td>
+                <a href="#" id="@item.VehID" class="vEdit" data-toggle="modal" data-target="#EditCarModal">Edit</a> |
+                @Html.ActionLink("Delete", "Details", new {id = item.ModelID}) |
+                @Html.ActionLink("Details", "Details", "Crm", new {id = item.VehID}, null)
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- Add new car modal -->
+<div id="AddCarModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a car to the inventory.</h4>
+            </div>
+
+            <div class="modal-body">
+                <div id="AddSuccess">
+                    <p> A new car was successfully added to the inventory. Close this modal to view, or <a href="#" id="resetForm">add another</a>.
+                    </p>
+                </div>
+                <form id="AddCarForm">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                        <!-- VinNo -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="VinNo">VIN #</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="VinNo" name="VinNo" type="text"/>
+                            </div>
+                        </div>
+                        <!-- Model Year -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="ModelYear">Model Year</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="ModelYear" name="ModelYear" type="text"/>
+                            </div>
+                        </div>
+                        <!-- IsNew -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="IsNew">New / Used</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="IsNew" name="IsNew" aria-required="true" aria-invalid="false">
+                                    <option value="1">New</option>
+                                    <option value="0">Used</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Mileage -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="Mileage">Mileage</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="Mileage" name="Mileage" type="text" value="0"/>
+                            </div>
+                        </div>
+                        <!-- Image URL -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="ImageURL">Image URL</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="ImageURL" name="ImageURL" type="text"/>
+                            </div>
+                        </div>
+                        <!-- Selling Price -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="SellingPrice">Selling Price</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="SellingPrice" name="SellingPrice" type="text"/>
+                            </div>
+                        </div>
+                        <!-- Make (not bound; only necessary to get a list of models) -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="MakeID">Make</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="MakeID" name="MakeID" aria-required="true" aria-invalid="false">
+                                    <option>Select a Make</option>
+                                    <!-- WE GET MAKES FROM GetMakes() in Add.js -->
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ModelID -->
+                        <div class="form-group" id="ModelFormGroup">
+                            <label class="control-label col-md-2" for="ModelID">Model</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="ModelID" name="ModelID" aria-required="true" aria-invalid="false">
+                                    <!-- WE GET MODELS FROM QUERY in Add.js -->
+                                    <option>Select a Model</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- IsAvailable -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="IsAvailable">Available now?</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="IsAvailable" name="IsAvailable" aria-required="true" aria-invalid="false">
+                                    <option></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input id="SubmitNewCar" type="submit" value="Add" class="btn btn-default"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit existing car modal -->
+<div id="EditCarModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit</h4>
+            </div>
+
+            <div class="modal-body">
+                <div id="EditSuccess">
+                    <p>The car has been edited successfully.</p>
+                </div>
+                <form id="EditCarForm">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <!-- VinNo -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editVinNo">VIN #</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="editVinNo" name="editVinNo" type="text" />
+                            </div>
+                        </div>
+                        <!-- Model Year -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editModelYear">Model Year</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="editModelYear" name="editModelYear" type="text" />
+                            </div>
+                        </div>
+                        <!-- IsNew -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editIsNew">New / Used</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="editIsNew" name="editIsNew" aria-required="true" aria-invalid="false">
+                                    <option value="1">New</option>
+                                    <option value="0">Used</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Mileage -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editMileage">Mileage</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="editMileage" name="editMileage" type="text" value="0" />
+                            </div>
+                        </div>
+                        <!-- Image URL -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editImageURL">Image URL</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="editImageURL" name="editImageURL" type="text" />
+                            </div>
+                        </div>
+                        <!-- Selling Price -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editSellingPrice">Selling Price</label>
+                            <div class="col-md-10">
+                                <input class="form-control text-box single-line" id="editSellingPrice" name="editSellingPrice" type="text" />
+                            </div>
+                        </div>
+                        <!-- Make (not bound; only necessary to get a list of models) -->
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editMakeID">Make</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="editMakeID" name="editMakeID" aria-required="true" aria-invalid="false">
+                                    <option>Select a Make</option>
+                                    <option>test</option>
+                                    <!-- WE GET MAKES FROM GetMakes() in Add.js -->
+                                </select>
+                            </div>
+                        </div>
+                        <!-- ModelID -->
+                        <div class="form-group" id="ModelFormGroup">
+                            <label class="control-label col-md-2" for="editModelID">Model</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="editModelID" name="editModelID" aria-required="true" aria-invalid="false">
+                                    <!-- WE GET MODELS FROM QUERY in Add.js -->
+                                    <option>Select a Model</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- IsAvailable -->
+                        <div class="form-group">
+                        <div class="form-group">
+                            <label class="control-label col-md-2" for="editIsAvailable">Available now?</label>
+                            <div class="col-md-10">
+                                <select class="form-control" id="editIsAvailable" name="editIsAvailable" aria-required="true" aria-invalid="false">
+                                    <option></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input id="EditCar" type="submit" value="Edit" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ManageInventory")
+    <script src="~/Scripts/ManageInventory/Add.js"></script>
+}

@@ -1,0 +1,109 @@
+﻿@model Models.VehicleVM
+
+@{
+    ViewBag.Title = "Display Vehicles For Make";
+}
+
+<h4>DisplayVehiclesForMake,Crm</h4>
+
+
+<p>
+    @Html.ActionLink("Back to list", "Index")
+</p>
+<hr />
+<h4>Use dropdown display all models per make</h4>
+<hr />
+
+
+@using (Html.BeginForm("DisplayVehiclesForMake", "Crm", FormMethod.Post))
+{
+    <div>
+        <p>
+            @Html.DropDownListFor(m => m.MakeID, Model.MakeDto.SelectList, "-- vehicle make --")
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+
+    </div>
+}
+<hr />
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Year
+        </th>
+
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Chassis
+        </th>
+        <th>
+            Drivetrain
+        </th>
+        <th>
+            Trim
+        </th>
+        <th>
+            Mileage
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Image Url
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ListOfVehicle)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChassisType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivetrainType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mileage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellingPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+
+            <td>
+                @Html.ActionLink("NothingYet", "EditModel", new { id = item.ModelID })
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+

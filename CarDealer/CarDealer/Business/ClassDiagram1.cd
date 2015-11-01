@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Business.Read1VehicleOnIDBusiness" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessOneBusiness\Read\Read1VehicleOnIDBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.ReadOneModelOnIDBusiness" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessOneBusiness\Read\ReadOneModelOnIDBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.CreateInqueryBusiness" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessOneBusiness\Write\CreateInqueryBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.InsertModelBusiness" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessOneBusiness\Write\InsertModelBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.UpdateModelBusiness" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteProcessOneBusiness\Write\UpdateModelBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.ProcessOneBusiness&lt;T&gt;" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAgAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractBusiness\ProcessOneBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllBusiness&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAEAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractBusiness\ReadAllBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadManyOnIDBusiness&lt;T&gt;" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAEAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractBusiness\ReadManyOnIDBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllBestTimeToCall" Collapsed="true">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllBestTimeToCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllChassisBusiness" Collapsed="true">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllChassisBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllDrivetrainBusiness" Collapsed="true">
+    <Position X="4.75" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="DataAccess.DapperReaders.ReadAllBusiness&lt;T&gt;" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="4.259" />
+        <Point X="8" Y="6.69" />
+        <Point X="6.25" Y="6.69" />
+        <Point X="6.25" Y="6.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllDrivetrainBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllHow2Contact" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllHow2Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllMakeBusiness" Collapsed="true">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllMakeBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllModelBusiness" Collapsed="true">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllModelBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllTimeframeToPurchase" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllTimeframeToPurchase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllVehicleForCustomerBusiness" Collapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllVehicleForCustomerBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadAllVehicleOnSprocBusiness" Collapsed="true">
+    <Position X="4.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadAllVehicleOnSprocBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadLeadSummaryBusiness" Collapsed="true">
+    <Position X="4.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadAllBusiness\ReadLeadSummaryBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadModelOnMakeIDBusiness" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadManyBusiness\ReadModelOnMakeIDBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccess.DapperReaders.ReadVehicleOnMakeIDBusiness" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteReadManyBusiness\ReadVehicleOnMakeIDBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.CrmDisplayVehForMakeVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\CrmDisplayVehForMakeVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.CrmIndexVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\CrmIndexVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.CrmInqueryVMprimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\CrmInqueryVMprimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.ManageModelsCreateModelVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\ManageModelsCreateModelVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.ManageModelsDisplayModelsVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\ManageModelsDisplayModelsVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.ManageModelsEditModelVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\ManageModelsEditModelVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.ManageModelsIndexVMPrimer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\ManageModelsIndexVMPrimer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Business.IViewModelPrimeableFactory" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAwAAQAAAgAAAQAAAAAAAAAgAIgAAAAAAAA=</HashCode>
+      <FileName>BusinessFactories\IViewModelPrimeableFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.ProcessOneBussinesFactory" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAAAAAAAAAAAAAAAAQACgAAAAgEgAAEAAAAAA=</HashCode>
+      <FileName>BusinessFactories\ProcessOneBussinesFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.ReadAllBussinessFactory" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAIACAgAQAAACAAAQAABBAQgAAAkloAQAIQ=</HashCode>
+      <FileName>BusinessFactories\ReadAllBussinessFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Business.ReadManyBussinessFactory" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAIAAAAAAAACAAEAQAAAEAAEAAAAAI=</HashCode>
+      <FileName>BusinessFactories\ReadManyBussinessFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Business.IViewModelPrimeable&lt;T&gt;" Collapsed="true">
+    <Position X="9.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVmPrimeable Hierachy\IViewModelPrimeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

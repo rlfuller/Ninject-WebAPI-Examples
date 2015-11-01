@@ -1,0 +1,72 @@
+﻿@using System.Data
+@model Models.Response<List<Models.LeadSummaryVM>>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<br>
+<table class="table">
+    <tr>
+        <th>
+            Request 
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Created On
+        </th>
+        <th>
+           Available
+        </th>
+        <th>
+            Purchase BY
+        </th>
+        <th>
+            Lead Status
+        </th>
+        <th>
+            Last Contacted
+        </th>
+        <th>
+           Manage
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Data)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalesRequestID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreateSmartProp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availability)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseTimeframe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SrsType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactDate)
+            </td>
+
+            <td>
+                
+                @Html.ActionLink("Manage", "Manage", new {id = item.SalesRequestID, vehID = item.VehID}, null)
+
+            </td>
+        </tr>
+    }
+
+</table>

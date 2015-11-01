@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C193A0E8-7251-4602-854E-CD95B1394EE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractRepo\ProcessOneRepo.cs" />
+    <Compile Include="ConcreteReadManyRepo\ReadContactHistOnIDRepo.cs" />
+    <Compile Include="ConcreteReadOneRepo\ReadLeadOnIDRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllHow2ContactRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllTimeframe2PurchRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadbestTime2CallRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadLeadSummaryRepo.cs" />
+    <Compile Include="ConcreteReadOneRepo\Read1VehicleOnIDRepo.cs" />
+    <Compile Include="AbstractRepo\ReadOnIDRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllVehicleOnSprocRepo.cs" />
+    <Compile Include="ConcreteReadManyRepo\ReadVehicleOnMakeIDRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\InsertContactHistoryRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\InsertLeadRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\InsertSalesRequestRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\InsertVehicleRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\UpdateModelRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\InsertModelRepo.cs" />
+    <Compile Include="ConcreteReadManyRepo\ReadModelOnMakeIDRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllChassisRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllDrivetrainRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllMakeRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllModelRepo.cs" />
+    <Compile Include="ConcreteReadAllRepo\ReadAllVehicleForCustomerRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\UpdateSalesRequestRepo.cs" />
+    <Compile Include="ConcreteWriterRepo\UpdateVehicleRepo.cs" />
+    <Compile Include="ConnStringGetter.cs" />
+    <Compile Include="AbstractRepo\ReadAllRepo.cs" />
+    <Compile Include="ConcreteReadOneRepo\ReadModelByIDRepo.cs" />
+    <Compile Include="NotInUse\IAllRecordsReadable.cs" />
+    <Compile Include="NotInUse\IManyRecordsReadable.cs" />
+    <Compile Include="NotInUse\IRecProcessable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{64abad29-35c3-49bb-b8b6-904ead2fb110}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

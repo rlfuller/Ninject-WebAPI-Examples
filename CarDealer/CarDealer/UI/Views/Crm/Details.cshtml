@@ -1,0 +1,174 @@
+﻿@model Models.VehicleVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default coupon">
+            <div class="panel-heading" id="head">
+                <div class="panel-title" id="title">
+                    <span class="hidden-xs">@Model.ModelYear @Model.MakeName @Model.ModelName</span>
+                    <span class="visible-xs">Automatic Transmission Service</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="detail-image"><img src="@Model.ImageUrl" class="coupon-img img-rounded"></div>
+                <div class="col-md-9">
+                    <ul class="items">
+                        @if (Model.IsNew != null && Model.IsNew == true)
+                        {
+                            <li>Brand new!</li>
+                        }
+                        else
+                        {
+                            <li>Only @Model.Mileage miles!</li>
+                        }
+                        <li>@Model.Trim Engine </li>
+                        <li>Stock #: @Model.VehID</li>
+                        <li>Vin #: @Model.VinNo</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="offer">
+                        @{ var number = (int)Model.SellingPrice;}
+                        <span class="usd"><sup>$</sup></span>
+                        <span class="number">@number</span>
+                        <span class="cents"><sup>95</sup></span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <p class="disclosure">
+                        Using Genuine Oil Filter and
+                        multigrade oil up to vehicle specification. Lube as
+                        necessary. Ester Oil or Synthetic available at additional
+                        cost. Excludes hazardous waste fee, tax and shop supplies,
+                        where applicable. Offer not valid with previous charges or
+                        with any other offers or specials. Customer must offer at
+                        time of write-up. No cash value.
+                    </p>
+                </div>
+            </div>
+            <div class="panel-footer" style="padding:5px 15px 40px">
+                <div class="coupon-code">
+                    <div class="print">
+                        @Html.ActionLink("Inquire", "Inquire", "Crm", new { id = Model.VehID }, new { @class = "btn btn-success fright", @style = "" })
+                    </div>
+                    <div>
+                        @Html.ActionLink("Back", "Index", "Crm", null, new { @class = "btn btn-primary flight" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-center"><a href="#" class="btn btn-default">Back to top <i class="fa fa-chevron-up"></i></a></p>
+
+
+@*<h4>Vheicle Details, Crm</h4>
+
+
+<td>
+    @Html.ActionLink("Back to Inventory", "Index")  
+</td>*@
+
+
+
+
+
+@*<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default coupon">
+            <div class="panel-heading" id="head">
+                <div class="panel-title" id="title">
+                    <span class="hidden-xs">@Model.ModelYear @Model.MakeName @Model.ModelName</span>
+                    <span class="visible-xs">Automatic Transmission Service</span>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div id="detail-image"><img src="@Model.ImageUrl" class="coupon-img img-rounded"></div>
+                <div class="col-md-9">
+                    <ul class="items">
+                        @if (Model.IsNew != null && Model.IsNew == true)
+                        {
+                            <li>Brand new!</li>
+                        }
+                        else
+                        {
+                            <li>Only @Model.Mileage miles!</li>
+                        }
+                        <li>@Model.Trim Engine </li>
+                        <li>Stock #: @Model.VehID</li>
+                        <li>Vin #: @Model.VinNo </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="offer">
+                        @{ var number = (int)Model.SellingPrice;}
+                        <span class="usd"><sup>$</sup></span>
+                        <span class="number">@number</span>
+                        <span class="cents"><sup>95</sup></span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <p class="disclosure">
+                        Using Genuine Oil Filter and
+                        multigrade oil up to vehicle specification. Lube as
+                        necessary. Ester Oil or Synthetic available at additional
+                        cost. Excludes hazardous waste fee, tax and shop supplies,
+                        where applicable. Offer not valid with previous charges or
+                        with any other offers or specials. Customer must offer at
+                        time of write-up. No cash value.
+                    </p>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="coupon-code">
+                    Code: GBWO2
+                    <span class="print">
+                        <a href="#" class="btn btn-link"><i class="fa fa-lg fa-print"></i> Print Coupon</a>
+                    </span>
+                </div>
+                <div class="exp">Expires: Sep 30, 2016</div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr/>
+        <div class="display-field">
+            <img class="irc_mi" style="margin-top: 45px;" src="@Model.ImageUrl" width="320" height="320">
+        </div>
+
+        <h5>Existing model data: </h5>
+        <dt>@Html.DisplayFor(m => m.AdHeader)</dt>
+        <dt>@Html.DisplayFor(m => m.AdBody)</dt>
+        <dt>@Html.Label("Stock No:") @Html.DisplayFor(m => m.VehID)</dt>
+        <dt>@Html.Label("Vin No:") @Html.DisplayFor(m => m.VinNo)</dt>
+        <dt>@Html.Label("Year:") @Html.DisplayFor(m => m.ModelYear)</dt>
+        <dt>@Html.Label("Make:") @Html.DisplayFor(m => m.MakeName)</dt>
+        <dt>@Html.Label("Model:") @Html.DisplayFor(m => m.ModelName)</dt>
+        <dt>@Html.Label("Trim:") @Html.DisplayFor(m => m.Trim)</dt>
+        <dt>@Html.Label("Mileage:") @Html.DisplayFor(m => m.Mileage)</dt>
+        <dt>@Html.Label("Price:") @Html.DisplayFor(m => m.SellingPrice)</dt>
+        <dt>@Html.Label("Availability:") @Html.DisplayFor(m => m.IsAvailSmartProp)</dt>
+
+        <div class="col-md-6">
+            @Html.ActionLink("Submit inquery", "Inquire", "Crm", new { id = Model.VehID }, new { @class = "btn btn-primary btn-product" })
+        </div>
+
+        <hr/>
+
+    </div>
+}*@

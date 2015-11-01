@@ -1,0 +1,105 @@
+﻿@model Models.ModelVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4> "Index", "CreateModel"</h4>
+<br/>
+
+<h5>Existing model data: </h5>
+<dt> @Html.DisplayFor(m => m.ResponseMessage)</dt>
+<hr />
+<p>
+    @Html.ActionLink("Create New Model", "CreateModel")
+</p>
+<hr />
+<h4>Use dropdown to manage all models per make</h4>
+<hr />
+
+
+@using (Html.BeginForm("DisplayModelsForMake", "ManageModels", FormMethod.Post))
+{
+    <div>
+        <p>
+            @Html.DropDownListFor(m => m.MakeID, Model.MakeDto.SelectList, "-- vehicle make --") 
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+
+    </div>
+}
+<hr />
+
+@*<div class="form-group">
+    @Html.LabelFor(model => model.MakeName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(model => model.MakeID, Model.MakeDto.SelectList, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MakeID, "", new { @class = "text-danger" })
+    </div>
+</div>*@
+
+<br />
+
+
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Chassis
+        </th>
+        <th>
+            Drivetrain
+        </th>
+        <th>
+            Trim
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ListOfModel)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChassisType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivetrainType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trim)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Edit", "EditModel", new { id = item.ModelID })
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p class="text-center"><a href="#" class="btn btn-default">Back to top <i class="fa fa-chevron-up"></i></a></p>
